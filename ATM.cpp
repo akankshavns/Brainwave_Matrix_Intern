@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-class ATM{
+class ATM {
    int pin, EnteredPin;
    double TotalBalance = 500.67;
 
