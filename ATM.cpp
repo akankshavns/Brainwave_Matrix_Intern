@@ -8,7 +8,7 @@ class ATM {
    public: void createPin(){
       cout<<"Please Enter your Card Pin\t";
       cin>>pin;
-      if(pin >= 1000 && pin <= 9999){cout<<"\nYour pin created successfully\n";
+      if(pin >= 1000 && pin <= 9999){cout<<"\nYour pIN created successfully\n";
       }else{
          cout<<"\nPlease enter four digit PIN\n";
       }
@@ -20,10 +20,14 @@ class ATM {
       cout<<"Enter your PIN";
       cin>>OldPin;
       if(pin == OldPin){
-         cout<<"Enter your pin to reset\t";
+         cout<<"Enter your old PIN to reset\t";
          cin>>NewPin;
-         pin = NewPin;
-         cout<<"\nPin changed successfully!n";
+         if(pin >= 1000 && pin <= 9999){
+            pin = NewPin;
+            cout<<"\nPIN changed successfully!n";
+         }else{
+            cout<<"\nPlease enter four digit PIN\n";
+         }
       }else{
          cout<<"\nIncorrect PIN! Please enter the correct PIN for Reset the PIN\n";
       }
@@ -86,8 +90,8 @@ int main(){
       cout<<"2. Change the pin.\n";
       cout<<"3. Withdraw money.\n";
       cout<<"4. Deposit Money.\n";
-      cout<<"6. Check Balance.\n";
-      cout<<"7. Exit.\n";
+      cout<<"5. Check Balance.\n";
+      cout<<"6. Exit.\n";
       cout<<"Enter your option: ";
       cin>>option;
       
@@ -118,6 +122,6 @@ int main(){
             cout<<"\nInvalid Option! please choose correct option\n";
             break;
       }
-   }while (option != 6);
+   } while (option != 6);
    return 0;
 }
