@@ -6,36 +6,36 @@ class ATM {
    double TotalBalance = 500.67;
 
    public: void createPin(){
-      cout<<"Please Enter your Card Pin\t";
+      cout<<"Please Enter your Card PIN: ";
       cin>>pin;
-      if(pin >= 1000 && pin <= 9999){cout<<"\nYour pIN created successfully\n";
+      if(pin >= 1000 && pin <= 9999){cout<<"\nYour PIN created successfully\n";
       }else{
-         cout<<"\nPlease enter four digit PIN\n";
+         cout<<"\nPlease Enter four digit PIN\n";
       }
       
    }
 
    public: void changePin(){
       int NewPin,OldPin;
-      cout<<"Enter your PIN";
+      cout<<"Enter your old PIN: ";
       cin>>OldPin;
       if(pin == OldPin){
-         cout<<"Enter your old PIN to reset\t";
+         cout<<"Enter your PIN to reset: ";
          cin>>NewPin;
-         if(pin >= 1000 && pin <= 9999){
+         if(NewPin >= 1000 && NewPin <= 9999){
             pin = NewPin;
             cout<<"\nPIN changed successfully!n";
          }else{
             cout<<"\nPlease enter four digit PIN\n";
          }
       }else{
-         cout<<"\nIncorrect PIN! Please enter the correct PIN for Reset the PIN\n";
+         cout<<"\nIncorrect PIN! Please enter the correct old PIN for Reset the PIN\n";
       }
    }
 
    public: void withdrawMoney(){
       int Amount;
-      cout<<"Enter your 4 digit pin number";
+      cout<<"Enter your 4 digit pin number: ";
       cin>>EnteredPin;
       if(EnteredPin == pin){
          cout << "Enter amount to withdraw: ";
@@ -43,6 +43,8 @@ class ATM {
          if(TotalBalance > 0 && TotalBalance >= Amount ){
             TotalBalance -=Amount;
             cout << "\nWithdrawal successful! Your new balance: " << TotalBalance << endl;
+         }else{
+            cout<<"You do not have sufficient balance to withdraw the money.";
          }
       }
       else{
@@ -51,11 +53,11 @@ class ATM {
    }
 
    public: void depositMoney(double depositAmount){
-      cout<<"Enter your 4 digit pin number";
+      cout<<"Enter your 4 digit pin number: ";
       cin>>EnteredPin;
       if(EnteredPin == pin){
          TotalBalance += depositAmount;
-         cout << "\nBalancr credited successful! Your new balance: " << TotalBalance << endl;
+         cout << "\nBalance credited successful! Your new balance: " << TotalBalance << endl;
       }
       else{
          cout<<"\nIncorrect PIN! Access denied, Please Enter the correct PIN\n";
@@ -64,7 +66,7 @@ class ATM {
    }
  
    public: void BalanceEnquiry(){
-      cout<<"Enter your 4 digit pin numbr";
+      cout<<"Enter your 4 digit pin number: ";
       cin>>EnteredPin;
       if(EnteredPin == pin){
          cout<<"\nYour Total Balance is : "<<TotalBalance << endl;
@@ -108,7 +110,7 @@ int main(){
             break;
          case 4:
             double DepositAmount;
-            cout<<"Enter the amount for deposit";
+            cout<<"Enter the amount for deposit: ";
             cin>>DepositAmount;
             obj.depositMoney(DepositAmount);
             break;

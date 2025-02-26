@@ -16,19 +16,19 @@ This function is used in the code to allow the user to set their ATM card PIN.
 ``` 
   public: void changePin(){
       int NewPin,OldPin;
-      cout<<"Enter your PIN";
+      cout<<"Enter your old PIN: ";
       cin>>OldPin;
       if(pin == OldPin){
-         cout<<"Enter your old PIN to reset\t";
+         cout<<"Enter your PIN to reset: ";
          cin>>NewPin;
-         if(pin >= 1000 && pin <= 9999){
+         if(NewPin >= 1000 && NewPin <= 9999){
             pin = NewPin;
             cout<<"\nPIN changed successfully!n";
          }else{
             cout<<"\nPlease enter four digit PIN\n";
          }
       }else{
-         cout<<"\nIncorrect PIN! Please enter the correct PIN for Reset the PIN\n";
+         cout<<"\nIncorrect PIN! Please enter the correct old PIN for Reset the PIN\n";
       }
    }
    ```  
@@ -36,7 +36,7 @@ This function is used in the code to allow the user to set their ATM card PIN.
 ``` 
  public: void withdrawMoney(){
       int Amount;
-      cout<<"Enter your 4 digit pin number";
+      cout<<"Enter your 4 digit pin number: ";
       cin>>EnteredPin;
       if(EnteredPin == pin){
          cout << "Enter amount to withdraw: ";
@@ -44,6 +44,8 @@ This function is used in the code to allow the user to set their ATM card PIN.
          if(TotalBalance > 0 && TotalBalance >= Amount ){
             TotalBalance -=Amount;
             cout << "\nWithdrawal successful! Your new balance: " << TotalBalance << endl;
+         }else{
+            cout<<"You do not have sufficient balance to withdraw the money.";
          }
       }
       else{
@@ -55,11 +57,11 @@ This function is used in the code to allow the user to set their ATM card PIN.
 This function is used in the code to allow the user to deposit money.
  ```
  public: void depositMoney(double depositAmount){
-      cout<<"Enter your 4 digit pin number";
+      cout<<"Enter your 4 digit pin number: ";
       cin>>EnteredPin;
       if(EnteredPin == pin){
          TotalBalance += depositAmount;
-         cout << "\nBalancr credited successful! Your new balance: " << TotalBalance << endl;
+         cout << "\nBalance credited successful! Your new balance: " << TotalBalance << endl;
       }
       else{
          cout<<"\nIncorrect PIN! Access denied, Please Enter the correct PIN\n";
