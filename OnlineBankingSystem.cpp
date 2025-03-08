@@ -36,11 +36,11 @@ public:
         cin.ignore();
         getline(cin, name);
 
-        cout << "Please Enter your Card PIN (4-digit): ";
+        cout << "Please Enter your 4-digit PIN: ";
         cin >> pin;
 
         if (pin >= 1000 && pin <= 9999) {
-            cout << "\nYour PIN created successfully\n";
+            cout << "\nAccount created successfully\n";
             accounts[userName] = Account(name, pin, 0.0);  // Corrected Initialization
         } else {
             cout << "\nPlease Enter a valid 4-digit PIN\n";
