@@ -222,7 +222,7 @@ int main() {
                                 cout << "\nInvalid Option! Please choose a valid option.\n";
                                 break;
                         }
-                    } while (option != 5);
+                    } while (option != 6);
                 }
                 break;
 
